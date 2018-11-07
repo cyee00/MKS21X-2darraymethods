@@ -42,8 +42,22 @@ public class ArrayMethods{
    }
     //returns an array of the row sums for each row of ary.
     //Index i of the return array contains the sum of elements in row i.
-
-    public static int[] allColSums(int[][] ary){}
+    private static int longestRow(int[][] ary){
+      int ans = 0;
+      for (int i=0;i<ary.length;i++){
+        if (ary[i].length>=ans){
+          ans = ary[i].length;
+        }
+      }
+      return ans;
+    }
+    public static int[] allColSums(int[][] ary){
+      int[] ans = new int[longestRow(ary)];
+      for (int i=0;i<ans.length;i++){
+        ans[i]=columnSum(ary,i);
+      }
+      return ans;
+    }
     //Returns an array with the column sum of each column of ary.
     //When a row is not long enough to reach the column count it as a zero. (NO indexOutOfBounds should ever occur)
     //Index i of the return array contains the sum of elements in column i, ignoring any rows that are too short.
