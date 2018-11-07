@@ -33,7 +33,13 @@ public class ArrayMethods{
    /*
    *PART 2 - use prior methods where appropriate
    */
-   public static int[] allRowSums(int[][] ary){}
+   public static int[] allRowSums(int[][] ary){
+     int[] ans = new int[ary.length-1];
+     for (int i=0;i<ary.length;i++){
+       ans[i]=rowSum(ary,i);
+     }
+     return ans;
+   }
     //returns an array of the row sums for each row of ary.
     //Index i of the return array contains the sum of elements in row i.
 
