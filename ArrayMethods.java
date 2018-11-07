@@ -19,7 +19,7 @@ public class ArrayMethods{
    public static int columnSum(int[][] ary, int x){
      int ans = 0;
      for (int i=0;i<ary.length;i++){
-      if (x<ary[i].length) {
+      if (x>ary[i].length-1) {
         ans = ans;
       } else {
         ans+=ary[i][x];
@@ -34,8 +34,8 @@ public class ArrayMethods{
    *PART 2 - use prior methods where appropriate
    */
    public static int[] allRowSums(int[][] ary){
-     int[] ans = new int[ary.length-1];
-     for (int i=0;i<ary.length;i++){
+     int[] ans = new int[ary.length];
+     for (int i=0;i<ans.length;i++){
        ans[i]=rowSum(ary,i);
      }
      return ans;
